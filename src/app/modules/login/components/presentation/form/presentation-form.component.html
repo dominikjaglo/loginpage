@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm">
+  <input formControlName="email">
+  <div *ngIf="hasError('email')">
+    {{ getErrors('email') | json }}
+  </div>
+  <br>
+
+
+  <input formControlName="password">
+  <div *ngIf="hasError('password')">
+    {{ getErrors('password') | json }}
+  </div>
+  <br>
+
+
+  <button type="submit" (click)="submit()" [disabled]="isSubmitEnabled()">Login</button>
+</form>
